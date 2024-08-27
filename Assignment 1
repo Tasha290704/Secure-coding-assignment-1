@@ -1,0 +1,60 @@
+// Question 1: Create a class Bank with fields accountType and accountBalance.
+public class Bank {
+    private String accountType;
+    private double accountBalance;   
+
+// Question 4: Create a parameterized constructor that sets the accountType and the accountBalance.
+    public Bank(String accountType, double accountBalance) {
+        this.accountType = accountType;
+        this.accountBalance = accountBalance;
+    }
+
+   
+// Question 2: Create a method deposit that adds to the accountBalance and returns the value.
+    public double deposit(double amount) {
+        accountBalance += amount;
+        return accountBalance;
+    }
+
+ 
+// Question 3: Create a method withdrawal that subtracts from the accountBalance and returns the value.
+    public double withdrawal(double amount) {
+        if (accountBalance >= amount) {
+            accountBalance -= amount;
+            return accountBalance;
+        } else {
+            System.out.println("Insufficient funds.");
+            return -1;
+        }
+    }
+
+    
+// Question 5: Create a method display to print "The account type is (accountType) and the balance is (accountBalance)".
+    public void display() {
+        System.out.println("The account type is " + accountType + " and the balance is " + accountBalance);
+    }
+}
+
+// Question 6: Create a class Insurance that inherits from the Bank class.
+public class Insurance extends Bank {
+    public Insurance(String accountType, double accountBalance) {
+        super(accountType, accountBalance);
+    }
+
+  
+// Question 7: Create a method cover that prints "You are covered".
+    public void cover() {
+        System.out.println("You are covered.");
+    }
+
+    // Main method for testing
+    public static void main(String[] args) {
+     
+// Question 8: Create an instance of the Bank class with YOUR INITIALS and REG NUMBER.
+        Bank myBank = new Bank("CNM", H230288J);
+
+       
+// Question 9: Invoke display method.
+        myBank.display();
+    }
+}
